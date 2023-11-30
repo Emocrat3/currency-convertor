@@ -1,0 +1,26 @@
+.currency-converter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-image: url("../../assets/images/background.svg");
+  background-repeat: 'no-repeat';
+  background-size: 'cover';
+}
+
+.currency-converter-container > .converter {
+  width: 70%;
+  height: 400px;
+  border-radius: 20px;
+  border: 2px #bdc0d9 solid;
+  background: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.currency-converter-container > .converter > .selector{
+  width: 40%;
+
+}
