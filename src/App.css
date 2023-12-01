@@ -1,9 +1,9 @@
 .general-app-container {
   text-align: center;
   min-height: 100vh;
-  height: 100vh;
+  height: 100%;
   min-width: 100vw;
-  width: 100vw;
+  width: 100%;
   background-color: purple;
 }
 

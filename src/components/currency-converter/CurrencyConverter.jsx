@@ -5,6 +5,7 @@ import { useCurrencyContext } from '../../context/CurrencyContext';
 import CurrencySwitch from '../currency-switch/CurrencySwitch';
 import DeveloperInfo from '../team/DeveloperInfo';
 import StatusComponent from '../status-api/StatusApi';
+import Loading from '../loading/Loading';
 
 const CurrencyConverter = () => {
   const {currencies, setCurrencies, currenciesValues, setCurrenciesValues, setStatusData} = useCurrencyContext();
@@ -53,8 +54,8 @@ const CurrencyConverter = () => {
   };
 
   return (
-    <div className='bg-gradient-to-r from-indigo-500 grid grid-cols-1 h-full flex-col justify-center items-center pt-6'>
-      { !loadingCurrencies && !loadingExchangeValue && Object.keys(currenciesValues).length > 0 &&
+    <div className='grid grid-cols-1 h-full flex-col justify-center items-center pt-6'>
+      { !loadingCurrencies && !loadingExchangeValue && !loadingStatus && Object.keys(currenciesValues).length > 0 ?
         <div className="py-4 mb-4 m-5 h-full bg-white flex flex-col justify-center items-center sm:my-12 sm:flex-row sm:justify-evenly rounded-lg ring-1 ring-indigo-600">
           <div>
             <dd className="order-first mb-6 text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
@@ -80,12 +81,11 @@ const CurrencyConverter = () => {
               />
             </div>
           </div>
-          { !loadingStatus && 
-            <StatusComponent />
-          }
+          <StatusComponent />
         </div>
+        : 
+        <Loading />
       }
-      
       <DeveloperInfo/>
     </div>
   )
