@@ -1,5 +1,4 @@
 # Currency Converter App in React
-
 Create a powerful currency converter application using React that allows users to seamlessly convert between different currencies. This app provides a user-friendly interface and real-time exchange rate updates for accurate conversions. Here's an overview of the key features:
 
 ### Intuitive User Interface:
@@ -16,11 +15,13 @@ Provide users with up-to-date information to ensure precision in their financial
 ### Responsive Design:
 Ensure a responsive design that adapts to various screen sizes, ensuring a seamless experience for users on both desktop and mobile devices.
 
+## You can see the page online here
+https://currency-convertor-by-arthuro-gomez.netlify.app/
+
 # Available Scripts
 
 In the project directory, you can run:
-
-### `npm start`
+### `npm install then npm start or npm install && npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

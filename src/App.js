@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="general-app-container flex items-center bg-gradient-to-r from-indigo-500">
+    <div className="general-app-container flex justify-center items-center bg-gradient-to-r from-indigo-500">
       <CurrencyExchangeProvider>
         <CurrencyConverter />
       </CurrencyExchangeProvider>
