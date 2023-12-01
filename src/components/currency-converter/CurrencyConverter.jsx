@@ -6,7 +6,7 @@ import Loading from '../loading/Loading';
 import Converter from '../show-converter/Converter';
 
 const CurrencyConverter = () => {
-  const {currencies, setCurrencies, currenciesValues, setCurrenciesValues, setStatusData} = useCurrencyContext();
+  const {currencies, setCurrencies, setCurrenciesValues, setStatusData} = useCurrencyContext();
   const [loadingCurrencies, setLoadingCurrencies] = useState(false);
   const [loadingExchangeValue, setLoadingExchangeValue] = useState(false);
   const [loadingStatus, setLoadingStatus] = useState(false);

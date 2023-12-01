@@ -20,7 +20,7 @@ const DeveloperInfo = () => {
                   <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
                 </div>
                 <div className="sm:flex">
-                  <div className="cursor-pointer" onClick={() => redirectTo('https://github.com')}>
+                  <div className="cursor-pointer" onClick={() => redirectTo('https://github.com/Emocrat3/currency-convertor')}>
                     <GithubIcon />
                   </div>
                   <div className="cursor-pointer" onClick={() => redirectTo('https://www.linkedin.com/in/arthurogomez')}>
