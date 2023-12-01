@@ -14,6 +14,7 @@ const CurrencySelector = ({label, options, defaultSelected, type}) => {
 
   useEffect(() => {
     setContextByType();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setContextByType = () => {
@@ -26,7 +27,7 @@ const CurrencySelector = ({label, options, defaultSelected, type}) => {
 
   const onCurrencyChange = (option, type) => {
     if((option.code === selectedFromExchange?.code) || (option.code === selectedToExchange?.code)){
-      this.selectedEqualOption();
+      selectedEqualOption();
     } else {
       dynamicSetContext(option);
 
@@ -94,6 +95,7 @@ const CurrencySelector = ({label, options, defaultSelected, type}) => {
           placeholder="0.00"
           onChange={onChangeValue}
           value={type === 'to' ? valueTo : valueFrom}
+          min={1}
         />
         <div className="absolute inset-y-0 right-0 flex items-center">
           <label htmlFor="currency" className="sr-only">
@@ -104,6 +106,7 @@ const CurrencySelector = ({label, options, defaultSelected, type}) => {
             name="currency"
             className="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
             onChange={e => onCurrencyChange(options.find(option => option.code === e.target.value), type)}
+            value={type === 'to' ? valueTo : valueFrom}
           >
             <option value={dynamicValue()?.code}>{dynamicValue()?.code}</option>
             { filteredOptions.map((option, index) => 

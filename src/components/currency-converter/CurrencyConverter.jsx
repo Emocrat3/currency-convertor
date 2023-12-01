@@ -4,6 +4,7 @@ import CurrencySelector from '../currency-selector/CurrencySelector';
 import { useCurrencyContext } from '../../context/CurrencyContext';
 import './CurrencyConverter.css';
 import CurrencySwitch from '../currency-switch/CurrencySwitch';
+import DeveloperInfo from '../team/DeveloperInfo';
 
 const CurrencyConverter = () => {
   const {currencies, setCurrencies, currenciesValues, setCurrenciesValues} = useCurrencyContext();
@@ -13,6 +14,7 @@ const CurrencyConverter = () => {
   useEffect(() => {
     fetchCurrencies();
     fetchLatestExchangeValues();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchCurrencies = async () => {
@@ -38,10 +40,10 @@ const CurrencyConverter = () => {
   };
 
   return (
-    <div className='currency-converter-container'>
-      { !loadingCurrencies && !loadingExchangeValue && Object.keys(currenciesValues).length > 0 ?
-        <div className="converter">
-          <div className="selector">
+    <div className='currency-converter-container h-full flex flex-col justify-center items-center pt-6'>
+      { !loadingCurrencies && !loadingExchangeValue && Object.keys(currenciesValues).length > 0 &&
+        <div className="py-4 mb-4 m-5 h-3/4 bg-white flex flex-col justify-center items-center sm:my-12 sm:flex-row sm:justify-evenly rounded-lg ring-1 ring-indigo-600">
+          <div className="mx-4">
             <CurrencySelector 
               label={'From:'}
               options={currencies}
@@ -52,7 +54,7 @@ const CurrencyConverter = () => {
 
           <CurrencySwitch/>
 
-          <div className="selector">
+          <div className="mx-4">
             <CurrencySelector 
               label={'To:'}
               options={currencies}
@@ -61,11 +63,8 @@ const CurrencyConverter = () => {
             />
           </div>
         </div>
-
-        : 
-
-        <div className="loading"> Loading... </div>
       }
+      <DeveloperInfo/>
     </div>
   )
 }
