@@ -18,7 +18,7 @@ const CurrencySwitch = () => {
   };
 
   return (
-    <button onClick={handleSwitch}>
+    <button onClick={handleSwitch}  data-testid='switch-currency-btn'>
       <div className='m-4 rounded-full border p-3 hover:border-indigo-600 hover:text-indigo-600'>
         <ArrowsUpDownIcon className="h-6 w-6"/>
       </div>

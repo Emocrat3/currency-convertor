@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useCurrencyContext } from "../../context/CurrencyContext";
 import { transformCurrencyValue } from "../../utils/transform";
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { team } from "../../utils/constants";
 import { GithubIcon, LinkedinIcon } from "../icons/Icons";
 
