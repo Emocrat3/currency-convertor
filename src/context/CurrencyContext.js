@@ -13,12 +13,15 @@ const CurrencyContext = createContext({
   setSelectedToExchange: () => {},
   selectedFromExchange: null,
   setSelectedFromExchange: () => {},
+  statusData: null,
+  setStatusData: () => {}
 });
 
 export const CurrencyExchangeProvider = ({ children }) => {
   const [valueTo, setValueTo] = useState('');
   const [valueFrom, setValueFrom] = useState(1);
   const [currencies, setCurrencies] = useState([]);
+  const [statusData, setStatusData] = useState(null);
   const [currenciesValues, setCurrenciesValues] = useState([]);
   const [selectedToExchange, setSelectedToExchange] = useState(null);
   const [selectedFromExchange, setSelectedFromExchange] = useState(null);
@@ -30,7 +33,8 @@ export const CurrencyExchangeProvider = ({ children }) => {
       currencies, setCurrencies, 
       currenciesValues, setCurrenciesValues, 
       selectedToExchange, setSelectedToExchange, 
-      selectedFromExchange, setSelectedFromExchange
+      selectedFromExchange, setSelectedFromExchange,
+      statusData, setStatusData
     }}>
       {children}
     </CurrencyContext.Provider>

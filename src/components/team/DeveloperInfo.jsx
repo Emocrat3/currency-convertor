@@ -15,7 +15,7 @@ const DeveloperInfo = () => {
               <div className="flex items-center gap-x-2 justify-center">
                 <img className="h-16 w-16 rounded-full" src={person.imageUrl} alt="Profile" />
                 <div className="">
-                  <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
+                  <h3 className="text-base font-semibold leading-7 tracking-tight bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">{person.name}</h3>
                   <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
                 </div>
                 <div className="sm:flex">

@@ -17,3 +17,12 @@ export async function getLatestExchangeValue() {
     console.error('Error fetching data:', error);
   }
 }
+
+export async function getStatus() {
+  try {
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/status?apikey=${process.env.REACT_APP_API_KEY}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
